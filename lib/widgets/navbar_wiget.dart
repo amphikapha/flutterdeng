@@ -1,20 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutterdeng/data/notifiers.dart';
 
-class NavBarWidget extends StatefulWidget {
+class NavBarWidget extends StatelessWidget {
   const NavBarWidget({super.key});
 
   @override
-  State<NavBarWidget> createState() => _NavBarWidgetState();
-}
-
-class _NavBarWidgetState extends State<NavBarWidget> {
-  // เอาไว้ข้างนอกเพราะจะได้ไม่ต้องสร้างใหม่ทุกครั้ง
-  // ถ้าอยู่ใน build จะสร้างใหม่ทุกครั้งที่มีการ rebuild
-  int currentIndex = 0;
-  
-  @override
   Widget build(BuildContext context) {
-    return NavigationBar(
+    return ValueListenableBuilder(valueListenable: selectedPageNotifier, 
+    builder: (context, selectPage, child) {
+      return NavigationBar(
           destinations: [
             NavigationDestination(
               icon: Icon(Icons.home),
@@ -26,11 +20,10 @@ class _NavBarWidgetState extends State<NavBarWidget> {
             ),
           ],
           onDestinationSelected: (int value) { // ใส่ type int ด้วยก็ดี
-            setState(() {
-              currentIndex = value;
-            });
+            selectedPageNotifier.value = value; // เปลี่ยนค่า selectedPageNotifier
           },
-          selectedIndex: currentIndex,
+          selectedIndex: selectPage,
         );
+    });
   }
 }

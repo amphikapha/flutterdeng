@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutterdeng/widgets/navbar_wiget.dart';
+import 'package:flutterdeng/data/notifiers.dart';
+import 'package:flutterdeng/views/widget_tree.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,22 +21,17 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return ValueListenableBuilder(valueListenable: isDarkModeNotifier, builder:(context, isDarkMode, child) {
+      return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.pink,
+          brightness: isDarkMode ? Brightness.dark : Brightness.light,
         ),
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Flutter Demo'),
-        ),
-        bottomNavigationBar: NavBarWidget(),
-        body: const Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+      home: WidgetTree()
     );
+    },);
   }
 }
