@@ -68,8 +68,24 @@ class _ProfilePageState extends State<ProfilePage> {
               onChanged:(value) => setState(() {
               sliderValue = value;
             }),), 
-            Image.asset('assets/images/macos.jpg'),
-            Image.asset('assets/images/macos.jpg'),
+            GestureDetector(
+              onTap:() {
+                print('Image tapped');
+              },
+              child: Image.asset('assets/images/macos.jpg'),
+            ),
+            InkWell(
+              splashColor: Colors.red,
+              onTap:() {
+                print('Image tapped from InkWell');
+              },
+              child: Container(
+                width: double.infinity,
+                height: 500,
+                color: Colors.white12,
+                // child: const Center(child: Text('InkWell')),
+              ),
+            ),
           ]
         ),
       ),
