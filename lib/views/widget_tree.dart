@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterdeng/data/notifiers.dart';
 import 'package:flutterdeng/views/pages/home_page.dart';
 import 'package:flutterdeng/views/pages/profile_page.dart';
+import 'package:flutterdeng/views/pages/setting_page.dart';
 import 'package:flutterdeng/widgets/navbar_wiget.dart';
 
 List<Widget> pages = [
@@ -32,6 +33,16 @@ class WidgetTree extends StatelessWidget {
                 isDarkModeNotifier.value = !isDarkModeNotifier.value;
               },
             ),
+            IconButton(
+              onPressed:() {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SettingPage(),
+                  ),
+                );
+              }, 
+              icon: Icon(Icons.settings),)
           ]
         ),
         bottomNavigationBar: NavBarWidget(),
