@@ -10,6 +10,7 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   TextEditingController nameController = TextEditingController();
   bool? isChecked = false;
+  bool isSwitched = false;
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +44,18 @@ class _ProfilePageState extends State<ProfilePage> {
             onChanged: (bool? value) {
               setState(() {
                 isChecked = value;
+              });
+            },
+          ),
+          Switch(value: isSwitched, onChanged:(value) => setState(() {
+            isSwitched = value;
+          }),),
+          SwitchListTile(
+            title: const Text('Switch me'),
+            value: isSwitched,
+            onChanged: (bool value) {
+              setState(() {
+                isSwitched = value;
               });
             },
           ),
