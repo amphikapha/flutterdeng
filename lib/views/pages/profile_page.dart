@@ -68,23 +68,33 @@ class _ProfilePageState extends State<ProfilePage> {
               onChanged:(value) => setState(() {
               sliderValue = value;
             }),), 
-            GestureDetector(
-              onTap:() {
-                print('Image tapped');
-              },
-              child: Image.asset('assets/images/macos.jpg'),
-            ),
             InkWell(
-              splashColor: Colors.red,
+              splashColor: Colors.teal,
               onTap:() {
                 print('Image tapped from InkWell');
               },
               child: Container(
                 width: double.infinity,
-                height: 500,
+                height: 50,
                 color: Colors.white12,
-                // child: const Center(child: Text('InkWell')),
+                child: const Center(child: Text('InkWell')),
               ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                print('EvaluatedButton pressed');
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.teal,
+                foregroundColor: Colors.white,
+              ),
+              child: const Text('EvaluatedButton'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                print('EvaluatedButton pressed');
+              },
+              child: const Text('EvaluatedButton'),
             ),
           ]
         ),
