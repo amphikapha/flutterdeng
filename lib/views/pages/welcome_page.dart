@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterdeng/views/widget_tree.dart';
+import 'package:flutterdeng/widgets/hero_widget.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -17,15 +18,7 @@ class WelcomePage extends StatelessWidget {
           const SizedBox(height: 20),
           Padding(
             padding: const EdgeInsets.all(20.0),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(20),
-              child: Image.asset(
-                'assets/images/macos.jpg',
-                fit: BoxFit.cover,
-                width: double.infinity,
-                height: 300,
-              ),
-            ),
+            child: HeroWidget()
           ),
           ElevatedButton(
             onPressed: () {
