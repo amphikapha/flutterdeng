@@ -37,7 +37,7 @@ class _ProfilePageState extends State<ProfilePage> {
               });
             },
           ),
-          CheckboxListTile(
+          CheckboxListTile.adaptive(
             tristate: true,
             title: const Text('Check me'),
             value: isChecked,
@@ -50,7 +50,7 @@ class _ProfilePageState extends State<ProfilePage> {
           Switch(value: isSwitched, onChanged:(value) => setState(() {
             isSwitched = value;
           }),),
-          SwitchListTile(
+          SwitchListTile.adaptive(
             title: const Text('Switch me'),
             value: isSwitched,
             onChanged: (bool value) {
