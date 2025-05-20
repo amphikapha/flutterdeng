@@ -96,6 +96,8 @@ class _ProfilePageState extends State<ProfilePage> {
               },
               child: const Text('EvaluatedButton'),
             ),
+            CloseButton(),
+            BackButton()
           ]
         ),
       ),
