@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterdeng/data/constant.dart';
 import 'package:flutterdeng/widgets/hero_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -20,15 +21,11 @@ class HomePage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    Text('Hello from Card', style: KTextStyle.titleTealText),
                     Text(
-                      'Hello from Card',
-                      style: TextStyle(
-                        color: Colors.teal,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      'Thid is Descrioption',
+                      style: KTextStyle.descrioptionText,
                     ),
-                    Text('Thid is Descrioption'),
                   ],
                 ),
               ),
