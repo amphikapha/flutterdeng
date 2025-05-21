@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterdeng/views/widget_tree.dart';
+import 'package:flutterdeng/views/pages/login_page.dart';
 import 'package:lottie/lottie.dart';
 
 class WelcomePage extends StatelessWidget {
@@ -31,7 +31,7 @@ class WelcomePage extends StatelessWidget {
             onPressed: () {
               // Navigate to the next page
               Navigator.pushReplacement(context, MaterialPageRoute(
-                builder: (context) => const WidgetTree(),
+                builder: (context) => const LoginPage(),
               ));
             },
             child: const Text('Get Started'),
@@ -44,7 +44,7 @@ class WelcomePage extends StatelessWidget {
               // Navigate to the next page
               Navigator.pushReplacement(context, MaterialPageRoute(
                 builder:(context) {
-                  return WidgetTree();
+                  return LoginPage();
                 },
               ));
             },
