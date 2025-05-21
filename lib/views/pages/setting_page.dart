@@ -142,9 +142,22 @@ class _SettingPageState extends State<SettingPage> {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      print('EvaluatedButton pressed');
+                      showDialog(context: context, builder:(context) {
+                        return AlertDialog.adaptive(
+                          title: const Text('Alert Dialog'),
+                          content: const Text('Hello from Alert Dialog'),
+                          actions: [
+                            TextButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              child: const Text('OK'),
+                            ),
+                          ],
+                        );
+                      },);
                     },
-                    child: const Text('EvaluatedButton'),
+                    child: const Text('Alert'),
                   ),
                 ],
               ),
