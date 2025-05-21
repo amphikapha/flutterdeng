@@ -161,6 +161,19 @@ class _SettingPageState extends State<SettingPage> {
                   ),
                 ],
               ),
+              Divider(
+                color: Colors.teal,
+                thickness: 2,
+                endIndent: 100,
+                height: 20,
+              ),
+              Container(
+                height: 50,
+                child: VerticalDivider(
+                  color: Colors.teal,
+                  thickness: 2,
+                ),
+              ),
               ElevatedButton(
                 onPressed: () {
                   print('EvaluatedButton pressed');
