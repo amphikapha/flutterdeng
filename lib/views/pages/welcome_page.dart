@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterdeng/views/widget_tree.dart';
-import 'package:flutterdeng/widgets/hero_widget.dart';
+import 'package:lottie/lottie.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -11,23 +11,44 @@ class WelcomePage extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Text(
-            'Welcome to Flutter Deng',
-            style: TextStyle(fontSize: 24),
+          FittedBox(
+            child: const Text(
+              'Welcome to Flutter Deng',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
           ),
           const SizedBox(height: 20),
           Padding(
             padding: const EdgeInsets.all(20.0),
-            child: HeroWidget()
+            child: Lottie.asset(
+              'assets/lotties/welcome.json',
+            ),
           ),
-          ElevatedButton(
+          FilledButton(
+            style: FilledButton.styleFrom(
+              minimumSize: const Size(200, 45),
+            ),
             onPressed: () {
               // Navigate to the next page
               Navigator.pushReplacement(context, MaterialPageRoute(
                 builder: (context) => const WidgetTree(),
               ));
             },
-            child: const Text('Go to Home'),
+            child: const Text('Get Started'),
+          ),
+          TextButton(
+            style: TextButton.styleFrom(
+              minimumSize: const Size(200, 45),
+            ),
+            onPressed: () {
+              // Navigate to the next page
+              Navigator.pushReplacement(context, MaterialPageRoute(
+                builder:(context) {
+                  return WidgetTree();
+                },
+              ));
+            },
+            child: const Text('Login'),
           ),
         ],
       ),
