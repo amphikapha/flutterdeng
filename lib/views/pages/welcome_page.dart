@@ -30,7 +30,7 @@ class WelcomePage extends StatelessWidget {
             ),
             onPressed: () {
               // Navigate to the next page
-              Navigator.pushReplacement(context, MaterialPageRoute(
+              Navigator.push(context, MaterialPageRoute(
                 builder: (context) => const LoginPage(),
               ));
             },
@@ -42,7 +42,7 @@ class WelcomePage extends StatelessWidget {
             ),
             onPressed: () {
               // Navigate to the next page
-              Navigator.pushReplacement(context, MaterialPageRoute(
+              Navigator.push(context, MaterialPageRoute(
                 builder:(context) {
                   return LoginPage();
                 },
