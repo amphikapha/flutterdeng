@@ -13,24 +13,13 @@ class HomePage extends StatelessWidget {
         child: Column(
           children: [
             HeroWidget(title: 'Home'),
-            ContainerWidget(
-              title: 'Hello from Card',
-              description: 'This is a description',
-            ),
-            ContainerWidget(
-              title: 'Hello from Card',
-              description: 'This is a description',
-            ),
-            ContainerWidget(
-              title: 'Hello from Card',
-              description: 'This is a description',
-            ),
-            ContainerWidget(
-              title: 'Hello from Card',
-              description: 'This is a description',
-            ),ContainerWidget(
-              title: 'Hello from Card',
-              description: 'This is a description',
+            Column(
+              children: List.generate(5, (index) {
+                return ContainerWidget(
+                  title: 'Hello from Card',
+                  description: 'This is a description',
+                );
+              }),
             ),
           ],
         ),
