@@ -113,13 +113,25 @@ class _SettingPageState extends State<SettingPage> {
             ),
             ElevatedButton(
               onPressed: () {
-                print('EvaluatedButton pressed');
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    duration: Duration(seconds: 5),
+                    behavior: SnackBarBehavior.floating,
+                    content: const Text('Hello from Snack Bar'),
+                    action: SnackBarAction(
+                      label: 'Undo',
+                      onPressed: () {
+                        print('Undo pressed');
+                      },
+                    ),
+                  ),
+                );
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.teal,
                 foregroundColor: Colors.white,
               ),
-              child: const Text('EvaluatedButton'),
+              child: const Text('Snack Bar'),
             ),
             ElevatedButton(
               onPressed: () {
