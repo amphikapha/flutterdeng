@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterdeng/views/pages/login_page.dart';
+import 'package:flutterdeng/views/pages/onboading_page.dart';
 import 'package:lottie/lottie.dart';
 
 class WelcomePage extends StatelessWidget {
@@ -33,9 +34,10 @@ class WelcomePage extends StatelessWidget {
                     minimumSize: const Size(200, 45),
                   ),
                   onPressed: () {
-                    // Navigate to the next page
                     Navigator.push(context, MaterialPageRoute(
-                      builder: (context) => const LoginPage(title: 'Register'),
+                      builder:(context) {
+                        return OnboadingPage();
+                      },
                     ));
                   },
                   child: const Text('Get Started'),
@@ -45,7 +47,6 @@ class WelcomePage extends StatelessWidget {
                     minimumSize: const Size(200, 45),
                   ),
                   onPressed: () {
-                    // Navigate to the next page
                     Navigator.push(context, MaterialPageRoute(
                       builder:(context) {
                         return LoginPage(title: 'Login');
