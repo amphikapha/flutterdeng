@@ -11,9 +11,8 @@ class HeroWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         child: Image.asset(
           'assets/images/macos.jpg',
-          fit: BoxFit.cover,
-          width: double.infinity,
-          height: 200,
+          color: Colors.teal,
+          colorBlendMode: BlendMode.darken,
         ),
       ),
     );
